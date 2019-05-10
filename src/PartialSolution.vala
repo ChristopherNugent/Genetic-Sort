@@ -65,7 +65,7 @@ namespace GeneticSort {
         }
 
         public static PartialSolution breed(PartialSolution p1, PartialSolution p2) {
-            return interlace(p1, p2);
+            return interweave(p1, p2);
         }
 
         private static PartialSolution random_breed(PartialSolution p1, PartialSolution p2) {
@@ -78,7 +78,7 @@ namespace GeneticSort {
             return child;
         }
 
-        private static PartialSolution interlace(PartialSolution p1, PartialSolution p2) {
+        private static PartialSolution interweave(PartialSolution p1, PartialSolution p2) {
             PartialSolution child = new PartialSolution.empty();
             for (int i = 0; i < child.genome.length; i++) {
                 bool use_p1 = (i % 2) == 0;
