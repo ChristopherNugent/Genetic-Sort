@@ -8,7 +8,7 @@ namespace GeneticSort {
                         (int) (POPULATION_SIZE * FRESH_RATIO));
 
 
-        Genetic g = new Genetic();
+        var g = new Population();
 
         Timer stopwatch = new Timer();
         stopwatch.start();

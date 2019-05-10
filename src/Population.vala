@@ -2,7 +2,7 @@ using Gee;
 
 namespace GeneticSort {
 
-    public class Genetic : Object {
+    public class Population : Object {
         
 
         private static CompareDataFunc<PartialSolution> comparator =
@@ -11,7 +11,7 @@ namespace GeneticSort {
         private Gee.List<PartialSolution> population;
         private int generation;
 
-        public Genetic() {
+        public Population() {
             generation = 0;
             population = new ArrayList<PartialSolution>();
             for (int i = 0; i < POPULATION_SIZE; i++) {
