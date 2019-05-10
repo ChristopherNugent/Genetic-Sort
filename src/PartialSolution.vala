@@ -69,7 +69,7 @@ namespace GeneticSort {
         }
 
         private static PartialSolution random_breed(PartialSolution p1, PartialSolution p2) {
-            PartialSolution child = new PartialSolution.empty();
+            var child = new PartialSolution.empty();
             for (int i = 0; i < child.genome.length; i++) {
                 bool use_p1 = (Random.next_int() % 2) == 0;
                 int inherited_value = (use_p1) ? p1.genome[i] : p2.genome[i];
@@ -79,7 +79,7 @@ namespace GeneticSort {
         }
 
         private static PartialSolution interweave(PartialSolution p1, PartialSolution p2) {
-            PartialSolution child = new PartialSolution.empty();
+            var child = new PartialSolution.empty();
             for (int i = 0; i < child.genome.length; i++) {
                 bool use_p1 = (i % 2) == 0;
                 int inherited_value = (use_p1) ? p1.genome[i] : p2.genome[i];
