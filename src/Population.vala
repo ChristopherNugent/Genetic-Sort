@@ -1,10 +1,14 @@
-using Gee;
+/**
+ * The Population class manages a population of Partial solutions,
+ * and provides functions to advance the Population to the next generation
+ */
+
+using Gee; // for List data structurs
 
 namespace GeneticSort {
 
     public class Population : Object {
         
-
         private static CompareDataFunc<PartialSolution> comparator =
             (ps1, ps2) => { return ps2.get_fitness() - ps1.get_fitness(); };
 
@@ -52,22 +56,17 @@ namespace GeneticSort {
             population = next_generation;
         }
 
-        public void print_scores() {
-            stdout.printf("Generatation %d:", generation);
-            for (int i = 0; i < PRINT_LIMIT; i++) {
-                var ps = population.get(i);
-                stdout.printf(" %2d", ps.get_fitness());
+        public int[] get_scores() {
+            int[] scores = new int[POPULATION_SIZE];
+            for (int i = 0; i < scores.length; i++) {
+                scores[i] = population.get(i).get_fitness();
             }
-            stdout.printf("\n");
+            return scores;
         }
 
-        public void print_best() {
-            stdout.printf("Best genome:");
+        public int[] get_best_genome() {
             var best = population.get(0);
-            foreach (int i in best.genome) {
-                stdout.printf(" %d", i);
-            }
-            stdout.printf("\n");
+            return best.genome;
         }
     }
 }
