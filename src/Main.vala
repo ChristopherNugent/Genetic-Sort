@@ -11,11 +11,11 @@ namespace GeneticSort {
         var pop = new Population();
         Timer stopwatch = new Timer();
         stopwatch.start();
-        for (int i = -1; i < GENERATIONS; i++) {
-            if (i % OBSERVE_TIMER == 0) {
+        for (int generation = 0; generation < GENERATIONS; generation++) {
+            if (generation % OBSERVE_TIMER == 0) {
                 print_scores(pop);
                 print_best(pop);
-                print_times(stopwatch.elapsed(), i);
+                print_times(stopwatch.elapsed(), generation);
             }
             pop.iterate();
         }
