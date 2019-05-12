@@ -4,7 +4,7 @@ OUT = GeneticSort
 
 all: $(OUT)
 
-$(OUT):
+$(OUT): ${SRC}
 	valac $(SRC) $(FLAGS) -o $(OUT)
 
 clean:
