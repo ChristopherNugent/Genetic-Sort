@@ -1,27 +1,21 @@
 namespace GeneticSort {
 
     void main() {
-        stdout.printf("List size = %d\nPopulation size = %d\nTop members kept = %d\nFresh members added = %d\n\n",
+        stdout.printf("Generations to be run = %d\nList size = %d\nPopulation size = %d\nTop members kept = %d\nFresh members added = %d\n\n",
+                        GENERATIONS,
                         PROBLEM_SIZE,
                         POPULATION_SIZE,
                         KEEP_AMOUNT,
                         (int) (POPULATION_SIZE * FRESH_RATIO));
 
-
         var pop = new Population();
-
         Timer stopwatch = new Timer();
         stopwatch.start();
         for (int i = -1; i < GENERATIONS; i++) {
             if (i % OBSERVE_TIMER == 0) {
                 print_scores(pop);
                 print_best(pop);
-                double generation_time = stopwatch.elapsed() / i;
-                stdout.printf("Time per generation: %.3fms\n", 1000 * generation_time);
-                stdout.printf("Generations per second: %.1f\n", 1.0 / generation_time);
-                double time_remaining = (GENERATIONS - i) * generation_time;
-                stdout.printf("Estimated time remaining: %.2fs\n", time_remaining);
-                stdout.printf("\n");
+                print_times(stopwatch.elapsed(), i);
             }
             pop.iterate();
         }
@@ -46,6 +40,15 @@ namespace GeneticSort {
         for (int i = 0; i < PRINT_LIMIT && i < genome.length; i++) {
             stdout.printf(" %d", genome[i]);
         }
+        stdout.printf("\n");
+    }
+
+    void print_times(double seconds_elapsed, int generation) {
+        double seconds_per_generation = seconds_elapsed / generation;
+        stdout.printf("Time per generation: %.3fms\n", 1000 * seconds_per_generation);
+        stdout.printf("Generations per second: %.1f\n", 1.0 / seconds_per_generation);
+        double time_remaining = (GENERATIONS - generation) * seconds_per_generation;
+        stdout.printf("Estimated time remaining: %.2fs\n", time_remaining);
         stdout.printf("\n");
     }
 }
