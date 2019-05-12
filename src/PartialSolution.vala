@@ -10,7 +10,10 @@ namespace GeneticSort {
         public int[] genome;
         private int cached_fitness;
 
-        public PartialSolution() {
+        /**
+         * Create a new PartialSolution with a random genome
+         */
+        public PartialSolution.random() {
             this.empty();
             for (int i = 0; i < genome.length; i++) {
                 genome[i] = i;

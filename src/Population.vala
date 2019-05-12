@@ -15,7 +15,7 @@ namespace GeneticSort {
             generation = 0;
             population = new ArrayList<PartialSolution>();
             for (int i = 0; i < POPULATION_SIZE; i++) {
-                population.add(new PartialSolution());
+                population.add(new PartialSolution.random());
             }
             population.sort(comparator);
         }
@@ -38,7 +38,7 @@ namespace GeneticSort {
             }
 
             for (int i = RANDOM_INDEX; i < POPULATION_SIZE; i++) {
-                next_generation.add(new PartialSolution());
+                next_generation.add(new PartialSolution.random());
             }
 
             foreach (PartialSolution ps in next_generation) {
