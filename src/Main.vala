@@ -6,7 +6,7 @@ namespace GeneticSort {
                         PROBLEM_SIZE,
                         POPULATION_SIZE,
                         KEEP_AMOUNT,
-                        (int) (POPULATION_SIZE * FRESH_RATIO));
+                        FRESH_AMOUNT);
 
         var pop = new Population();
         Timer stopwatch = new Timer();

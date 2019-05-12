@@ -20,4 +20,5 @@ namespace GeneticSort {
     const int KEEP_AMOUNT = (int) (POPULATION_SIZE * KEEP_RATIO);
     const int BREED_INDEX = (int) (POPULATION_SIZE * BREED_RATIO);
     const int RANDOM_INDEX = (int) (1 - POPULATION_SIZE * FRESH_RATIO);
+    const int FRESH_AMOUNT = (int) (POPULATION_SIZE * FRESH_RATIO);
 }
