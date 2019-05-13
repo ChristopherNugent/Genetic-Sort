@@ -44,11 +44,11 @@ namespace GeneticSort {
 
         /**
          * Get the fitness score of this PartialSolution
-         * 
+         *
          * The fitness score of a partial solution is currently defined as
          * the number of cases where genome[n - 1] < genome[n]. This bounds
          * the score on [0, PROBLEM_SIZE).
-         * 
+         *
          * The fitness is cached to improve efficiency on multiple calls.
          */
         public int get_fitness() {

@@ -8,13 +8,13 @@ namespace GeneticSort {
     const int GENERATIONS = 100000;
 
     // Length of array to sort
-    const int PROBLEM_SIZE = 20;
+    const int PROBLEM_SIZE = 50;
 
     // genetic algorithm settings
     const int POPULATION_SIZE = 1000;
     const double KEEP_RATIO = 0.1;
     const double BREED_RATIO = 0.3;
-    const double FRESH_RATIO = 0.0;
+    const double FRESH_RATIO = 0.1;
     const double MUTATE_RATIO = 0.000001;
 
     const int KEEP_AMOUNT = (int) (POPULATION_SIZE * KEEP_RATIO);

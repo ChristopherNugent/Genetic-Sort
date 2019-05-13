@@ -8,7 +8,7 @@ using Gee; // for List data structurs
 namespace GeneticSort {
 
     public class Population : Object {
-        
+
         private static CompareDataFunc<PartialSolution> comparator =
             (ps1, ps2) => { return ps2.get_fitness() - ps1.get_fitness(); };
 
@@ -27,7 +27,6 @@ namespace GeneticSort {
         // Move this population to the next generation
         public void iterate() {
             generation++;
-
             var next_generation = new ArrayList<PartialSolution>();
 
             for (int i = 0; i < KEEP_AMOUNT; i++) {

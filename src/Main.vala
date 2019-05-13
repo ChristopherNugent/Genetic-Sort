@@ -2,11 +2,11 @@ namespace GeneticSort {
 
     void main() {
         stdout.printf("Generations to be run = %d\nList size = %d\nPopulation size = %d\nTop members kept = %d\nFresh members added = %d\n\n",
-                        GENERATIONS,
-                        PROBLEM_SIZE,
-                        POPULATION_SIZE,
-                        KEEP_AMOUNT,
-                        FRESH_AMOUNT);
+                      GENERATIONS,
+                      PROBLEM_SIZE,
+                      POPULATION_SIZE,
+                      KEEP_AMOUNT,
+                      FRESH_AMOUNT);
 
         var pop = new Population();
         Timer stopwatch = new Timer();
@@ -22,7 +22,7 @@ namespace GeneticSort {
 
         stdout.printf("Ran %d generations.\n", GENERATIONS);
         print_scores(pop);
-        print_best(pop);    
+        print_best(pop);
     }
 
     void print_scores(Population p) {
